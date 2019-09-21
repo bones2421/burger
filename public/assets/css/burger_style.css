@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("/assets/img/background.jpg");
+    background-image: url("/assets/img/20150702-sous-vide-hamburger-anova-primary-1500x1125.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -15,7 +15,7 @@
 }
 
 #color-override {
-    color: #fff;
+    color:black;
 }
 
 #lefthead {

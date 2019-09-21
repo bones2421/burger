@@ -51,4 +51,4 @@ $(function() {
         }).then(location.reload());
     });
 
-})
+});
