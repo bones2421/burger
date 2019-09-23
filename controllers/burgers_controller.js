@@ -1,13 +1,13 @@
 // Dependencies
 var express = require("express");
-// Import the model to use its db functions for burger.js
+// Import model to use db functions for burger.js
 var burger = require("../models/burger.js");
 
-// Create the router for the app, and export the router at the end of your file.
+// Create router for app, export router at the end of file.
 var router = express.Router();
 // Create routes and set up logic where required.
 router.get("/", function (req, res) {
-    burger.selectAll(function(data) {
+    burger.displayAll(function(data) {
         var hbsObject = {
             burgers: data
         };
@@ -15,22 +15,22 @@ router.get("/", function (req, res) {
         res.render("index", hbsObject);
     });
 });
-// Add new burger to the db.
+// Add new burger to db.
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-        // Send back the ID of the new burger
+    burger.insert(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+        // Send back ID of new burger
         res.json({ id: result.insertId });
     });
 });
-// Set burger devoured status to true.
+// Set devoured status to true.
 router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    burger.updateOne({ devoured: req.body.devoured }, condition, function(result) {
+    burger.update({ devoured: req.body.devoured }, condition, function(result) {
         if (result.changedRows === 0) {
-            // If no rows were changed, then the ID must not exist, so 404.
+            // If no rows changed, ID does not exist, 404.
             return res.status(404).end();
         } else {
             res.status(200).end();
@@ -42,9 +42,9 @@ router.delete("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
-    burger.deleteOne(condition, function(result) {
+    burger.delete(condition, function(result) {
         if (result.changedRows === 0) {
-            // If no rows were changed, then the ID must not exist, so 404.
+            // If no rows changed, ID does not exist, 404.
             return res.status(404).end();
         } else {
             res.status(200).end();

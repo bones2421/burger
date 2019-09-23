@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Serve static content for the app from the "public" directory in the application directory.
+// Serve static content for app from "public" directory in application directory.
 app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
@@ -25,6 +25,8 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
+//Put http here every time
+//Will print link to follow in console
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
 });

@@ -1,8 +1,8 @@
-// Import (require) connection.js
+// Import connection.js
 var connection = require("../config/connection.js");
 
 // Helper function for SQL syntax.
-function printQuestionMarks(num) {
+function QuestionMarks(num) {
     var arr = [];
     for (var i = 0; i < num; i++) {
         arr.push("?");
@@ -11,9 +11,9 @@ function printQuestionMarks(num) {
 }
 
 // Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
+function objValToSql(ob) {
     var arr = [];
-    // loop through the keys and push the key/value as a string int arr
+    // loop through keys, push key/value as string int arr
     for (var key in ob) {
         var value = ob[key];
         // check to skip hidden properties
@@ -27,13 +27,13 @@ function objToSql(ob) {
             arr.push(key + "=" + value);
         }
     }
-    // translate array of strings to a single comma-separated string
+    // translate array of strings to single comma-separated string
     return arr.toString();
 }
 
 var orm = {
-    // Display all burgers in the db.
-    selectAll: function(table, cb) {
+    // Display all burgers in db.
+    order: function(table, cb) {
         var queryString = "SELECT * FROM " + table + ";";
 
         connection.query(queryString, function(err, result) {
@@ -43,8 +43,8 @@ var orm = {
             cb(result);
         });
     },
-    // Add a burger to the db.
-    insertOne: function(table, cols, vals, cb) {
+    // Add burger to db.
+    insert: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += cols.toString();
@@ -63,7 +63,7 @@ var orm = {
         });
     },
     // Set burger devoured status to true.
-    updateOne: function(table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -80,7 +80,7 @@ var orm = {
         });
     },
     // Delete a burger from the db.
-    deleteOne: function(table, condition, cb) {
+    delete: function(table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
