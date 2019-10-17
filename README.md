@@ -1,4 +1,2 @@
-# burger
-//App works locally
-//Still having trouble with heroku
-//Ask how to deploy
+Eat Da Burger!
+
