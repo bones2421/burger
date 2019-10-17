@@ -12,7 +12,7 @@ To use Eat-Da-Burger web application application from your local environment, yo
 
 Step 1 - Clone my repo using the command line below.
 
-git clone https://github.com/GrissomErick/Eat-Da-Burger.git
+git clone https://github.com/bones2421/burger
 Step 2 - Change directory to the cloned repo folder.
 
 cd Eat-Da-Burger
@@ -30,8 +30,6 @@ express NPM Package - https://www.npmjs.com/package/express
 path NPM Package - https://www.npmjs.com/package/path
 Built With
 VS Code - https://code.visualstudio.com/
-Git Tools - https://git-scm.com/download
-Live Markdown Editor - https://jbt.github.io/markdown-editor/
 Author
-Erick Grissom - Node/Express/Handlebars - Erick Grissom Eat-Da-Burger Repo
+Ben Williams
 
