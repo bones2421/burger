@@ -24,6 +24,8 @@ Step 3 - Install all required NPM packages.
 npm install
 Step 4 - Start the application server using the command line below
 
+![Annotation 2020-01-22 184346](https://user-images.githubusercontent.com/28325892/72951011-40aa5380-3d4a-11ea-98d9-44095b661b8e.png)
+
 node server.js
 Technology used
 node.js - https://nodejs.org/en/
