@@ -4,7 +4,7 @@ Eat-Da-Burger
 Project Description - Eat-Da-Burger is a full-stack web application.
 
 Application Heroku Link
-The link below will give you direct access to Eat-Da-Burger web application using your web browser via the Heroku web service. (NOTE: There will be a momentary delay when first accessing the Heroku servers.)
+The link below will give you direct access to Eat-Da-Burger web application using your web browser via the Heroku web service. (NOTE: There will be a momentary delay when first accessing the Heroku servers.) https://shielded-atoll-71823.herokuapp.com/
 
 Eat-Da-Burger
 Local Environment Setup
